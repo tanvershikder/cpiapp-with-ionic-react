@@ -1,0 +1,7 @@
+{
+  "name": "cpiapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
