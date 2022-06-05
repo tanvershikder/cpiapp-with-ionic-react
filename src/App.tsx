@@ -1,8 +1,8 @@
-import { IonApp, IonRouterOutlet, IonSplitPane, setupIonicReact } from '@ionic/react';
+import { IonApp, IonButtons, IonFooter, IonHeader, IonMenuButton, IonRouterOutlet, IonSplitPane, IonTitle, IonToolbar, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Redirect, Route } from 'react-router-dom';
 import Menu from './components/Menu';
-import Page from './pages/Page';
+import Dashbord from './pages/dashbord';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -22,25 +22,38 @@ import '@ionic/react/css/display.css';
 
 /* Theme variables */
 import './theme/variables.css';
+import About from './pages/About';
+import './App.css'
+import Teachers from './pages/Teachers';
+import Footer from './components/Footer';
 
 setupIonicReact();
 
 const App: React.FC = () => {
   return (
     <IonApp>
+      <IonHeader >
+        <IonToolbar className='header'>
+          <IonButtons slot="start">
+            <IonMenuButton />
+          </IonButtons>
+          <IonTitle>CpiApp</IonTitle>
+        </IonToolbar>
+      </IonHeader>
       <IonReactRouter>
         <IonSplitPane contentId="main">
           <Menu />
           <IonRouterOutlet id="main">
             <Route path="/" exact={true}>
-              <Redirect to="/page/Inbox" />
+              <Redirect to="/page/dashbord" />
             </Route>
-            <Route path="/page/:name" exact={true}>
-              <Page />
-            </Route>
+            <Route path='/page/dashbord' component={Dashbord}></Route> 
+            <Route path='/page/teachers' component={Teachers}></Route> 
+            <Route path='/page/about' component={About}></Route> 
           </IonRouterOutlet>
         </IonSplitPane>
       </IonReactRouter>
+      
     </IonApp>
   );
 };
