@@ -1,6 +1,22 @@
-.body{
-    background-color: aquamarine;
+.aboutbody{
     text-align: center;
     justify-items: center;
     margin-top: 55px;
+    padding: 10px;
+   
+}
+.aboutHeader{
+    color: blue;
+}
+.aboutInfo{
+    text-align: justify;
+    color: black;
+}
+
+.contactus{
+    background-color: beige;
+    padding: 20px;
+}
+.contactheder{
+    color: green;
 }
